@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IHelloService, HelloService>(); // Register HelloService
 builder.Services.AddScoped<ICategoryService, CategoryService>();// Category service
+builder.Services.AddScoped<IMWDATAService, MWDATAService>();// MWDATA service
 builder.Services.AddDbContext<Db69605C4hr2Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
