@@ -7,5 +7,6 @@ namespace Api_demo.Services
     {
         IEnumerable<Mwcat> GetAllCategories();
         IEnumerable<Mwcat> GetCategoriesByStid(string stid);
+        IEnumerable<Mwcat> GetCategoriesByStidAndGroup(string stid);
     }
 }

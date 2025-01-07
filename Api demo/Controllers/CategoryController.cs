@@ -24,10 +24,23 @@ namespace Api_demo.Controllers
             return Ok(categories);
         }
 
-        [HttpPost("GetByStid")]
+        [HttpPost("GetByStid")]                                                    // fetching all categories
         public IActionResult GetCategoriesByStid(string stid)
         {
             var categories = _categoryService.GetCategoriesByStid(stid);
+
+            if (categories == null || !categories.Any())
+            {
+                return NotFound(new { Message = "No categories found for the provided STID." });
+            }
+
+            return Ok(categories);
+        }
+
+        [HttpPost("GetByStidAndGroup")]                                                // fetching categories where Group is SE
+        public IActionResult GetCategoriesByStidAndGroup(string stid)
+        {
+            var categories = _categoryService.GetCategoriesByStidAndGroup(stid);
 
             if (categories == null || !categories.Any())
             {

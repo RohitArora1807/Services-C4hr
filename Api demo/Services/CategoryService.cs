@@ -21,6 +21,11 @@ namespace Api_demo.Services
             return _context.Mwcats.Where(c => c.Stid == stid).ToList();
         }
 
+        public IEnumerable<Mwcat> GetCategoriesByStidAndGroup(string stid)  // fetching where Group is SE
+        {
+            return _context.Mwcats.Where(c => c.Stid == stid && c.Catgrp == "se").ToList();  
+        }
+
         //public IEnumerable<Mwcat> GetCatIdGrpNameByStid(string stid)          //Fetching Catid, Catgrp, Catname -> using stid
         //{
         //    return _context.Mwcats
