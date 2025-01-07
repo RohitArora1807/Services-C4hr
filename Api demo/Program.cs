@@ -1,4 +1,7 @@
+using Api_demo.Models;
 using Api_demo.Services;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,10 @@ builder.Services.AddSwaggerGen();
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddScoped<IHelloService, HelloService>(); // Register HelloService
+builder.Services.AddScoped<ICategoryService, CategoryService>();// Category service
+builder.Services.AddDbContext<Db69605C4hr2Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 
