@@ -28,5 +28,12 @@ namespace Api_demo.Controllers
 
             return Ok(result);
         }
+        // New GET endpoint to fetch all data
+        [HttpGet("GetAllData")]
+        public IActionResult GetAllData()
+        {
+            var result = _MWDATAService.GetAllData();
+            return Ok(result);
+        }
     }
 }

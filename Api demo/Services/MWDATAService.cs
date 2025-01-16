@@ -69,5 +69,18 @@ namespace Api_demo.Services
             //// Return success with the matching monthly value
             //return new List<object> { new { status = "success", monthly = filteredData.Monthly } };
         }
+
+        // New method to get all data
+        public IEnumerable<object> GetAllData()
+        {
+            return _context.Mwdata.Select(d => new
+            {
+                d.Stid,
+                d.Catid,
+                d.Stdate,
+                d.Monthly
+            }).ToList();
+        }
+
     }
 }
