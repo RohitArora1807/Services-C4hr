@@ -13,6 +13,7 @@ namespace Api_demo.Controllers
         {
              _logger=logger;
     }
+        [HttpGet]
         public IActionResult Index()
         {
             return Ok("success");
