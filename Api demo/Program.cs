@@ -1,3 +1,4 @@
+using Api_demo.Logging;
 using Api_demo.Models;
 using Api_demo.Services;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,8 @@ builder.Services.AddScoped<IMWDATAService, MWDATAService>();// MWDATA service
 builder.Services.AddScoped<IRRDETService, RRDETService>(); //RRDETService
 builder.Services.AddDbContext<Db69605C4hr2Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+var logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
+builder.Services.AddSingleton(new LoggerService(logDirectory));
 
 
 var app = builder.Build();
@@ -30,11 +33,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//if (app.Environment.IsProduction())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
+if (app.Environment.IsProduction())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 
