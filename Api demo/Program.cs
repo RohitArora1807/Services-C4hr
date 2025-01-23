@@ -20,6 +20,7 @@ builder.Services.AddScoped<IHelloService, HelloService>(); // Register HelloServ
 builder.Services.AddScoped<ICategoryService, CategoryService>();// Category service
 builder.Services.AddScoped<IMWDATAService, MWDATAService>();// MWDATA service
 builder.Services.AddScoped<IRRDETService, RRDETService>(); //RRDETService
+builder.Services.AddScoped<IActService, ActService>(); //ActService
 builder.Services.AddDbContext<Db69605C4hr2Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 var logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
