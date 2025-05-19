@@ -41,9 +41,9 @@ namespace Api_demo.Services
 {
     public class ActService : IActService
     {
-        private readonly Db69605C4hr2Context _dbC4HRContext;
+        private readonly DbC4HRContext _dbC4HRContext;
 
-        public ActService(Db69605C4hr2Context dbC4HRContext)
+        public ActService(DbC4HRContext dbC4HRContext)
         {
             _dbC4HRContext = dbC4HRContext;
         }

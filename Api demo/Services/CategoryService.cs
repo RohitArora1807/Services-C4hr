@@ -4,9 +4,9 @@ namespace Api_demo.Services
 {
     public class CategoryService : ICategoryService
     {
-        private readonly Db69605C4hr2Context _context;
+        private readonly DbC4HRContext _context;
 
-        public CategoryService(Db69605C4hr2Context context)
+        public CategoryService(DbC4HRContext context)
         {
             _context = context;
         }

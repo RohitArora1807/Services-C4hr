@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api_demo.Models;
 
-public partial class Db69605C4hr2Context : DbContext
+public partial class DbC4HRContext : DbContext
 {
-    public Db69605C4hr2Context()
+    public DbC4HRContext()
     {
     }
 
-    public Db69605C4hr2Context(DbContextOptions<Db69605C4hr2Context> options)
+    public DbC4HRContext(DbContextOptions<DbC4HRContext> options)
         : base(options)
     {
     }

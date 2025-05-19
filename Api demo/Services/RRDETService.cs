@@ -8,9 +8,9 @@ namespace Api_demo.Services
 {
     public class RRDETService : IRRDETService
     {
-        private readonly Db69605C4hr2Context _context;
+        private readonly DbC4HRContext _context;
         private readonly LoggerService _logger;
-        public RRDETService(Db69605C4hr2Context context, LoggerService logger)
+        public RRDETService(DbC4HRContext context, LoggerService logger)
         {
             _context = context;
             _logger = logger;

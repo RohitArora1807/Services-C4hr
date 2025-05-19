@@ -7,9 +7,9 @@ namespace Api_demo.Services
 {
     public class MWDATAService : IMWDATAService
     {
-        private readonly Db69605C4hr2Context _context;
+        private readonly DbC4HRContext _context;
 
-        public MWDATAService(Db69605C4hr2Context context)
+        public MWDATAService(DbC4HRContext context)
         {
             _context = context;
         }
